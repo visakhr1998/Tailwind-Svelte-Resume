@@ -2,6 +2,7 @@
 <script>
     // Add any script logic here
 import Button from "./Button.svelte";
+import img from "./1674073603674.jpg";
   </script>
   
   <style>
@@ -65,19 +66,19 @@ import Button from "./Button.svelte";
     }
   
     .top-10 {
-      top: 2.5rem; /* Adjust top position as needed */
+      top: 1.2rem; /* Adjust top position as needed */
     }
   
     .left-5 {
-      left: 1.25rem; /* Adjust left position as needed */
+      left: 0.6rem; /* Adjust left position as needed */
     }
   
     .w-16 {
-      width: 4rem; /* Adjust width as needed */
+      width: 7rem; /* Adjust width as needed */
     }
   
     .h-16 {
-      height: 4rem; /* Adjust height as needed */
+      height: 7rem; /* Adjust height as needed */
     }
   
     .text-white {
@@ -118,7 +119,7 @@ import Button from "./Button.svelte";
       <!-- top content -->
       <div class="flex rounded-t-lg bg-black sm:px-2 w-full">
         <div class="h-40 w-40 overflow-hidden sm:rounded-full sm:relative sm:p-0 top-10 left-5 p-3">
-          <img src="./1674073603674.jpg" alt="Visakh Radhakrishnan's profile image" class="h-16 w-16 rounded-full">
+          <img src={img} alt="Visakh Radhakrishnan's profile image" class="h-16 w-16 rounded-full">
         </div>
   
         <div class="w-2/3 sm:text-center pl-5 mt-10 text-start">
@@ -127,7 +128,6 @@ import Button from "./Button.svelte";
           </p>
           <p class="text-white text-heading">Data Analyst</p>
         </div>
-        <!-- Dark mode button -->
       </div>
     </div>
 

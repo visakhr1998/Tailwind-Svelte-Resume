@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import Header from "./Header.svelte";
   import AboutMe from "./AboutMe.svelte";
   import 'tailwindcss/base.css';
@@ -13,6 +15,12 @@
   import Education from "./Education.svelte";
   import TailwindCss from "$lib/TailwindCSS.svelte";
   import Button from "./Button.svelte";
+	import DownloadButton from "./DownloadButton.svelte";
+	import Login from "./Login.svelte";
+  import { goto } from '$app/navigation';
+	import Jobdetails from "./Jobdetails.svelte";
+  export let data;
+  import {loginStatus} from './loginstatusstore';
 
 </script>
 
@@ -22,10 +30,12 @@
 </Header>
 <div class="flex items-center">
 <Button></Button>
+<DownloadButton/>
 </div>
 
+{#if $loginStatus}
 <div class="parent-container grid">
-  <div class="col-span-1 row-span-1">
+  <div class="col-span-1 row-span-2">
     <Contact />
     <Skills />
     <Education />
@@ -35,8 +45,25 @@
     <Aboutme />
     <Experience />
     <Languages />
+    <Jobdetails jobs={data.jobs}/>
   </div>
 </div>
+{:else}
+<div class="parent-container grid">
+  <div class="col-span-1 row-span-1">
+    <Contact />
+    <Skills />
+    <Education />
+    <Interests />
+    <Login/>
+  </div>
+  <div class="col-span-1 row-span-1">
+    <Aboutme />
+    <Experience />
+    <Languages />
+  </div>
+</div>
+{/if}
 
 <style>
   .parent-container {
